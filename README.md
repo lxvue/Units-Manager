@@ -4,6 +4,8 @@
 
 axios使用方法
 a.引入 var qs = require('qs');
+
+
 b.   			this.$ajax({
 						      method: 'post',
 						      url: _that.URL+'/ddd',
@@ -14,9 +16,10 @@ b.   			this.$ajax({
 							.catch(function(err){
 							  console.log(err);
 							})
+							
 
 less使用方法
-<!-- <style scoped="scoped" lang="less">
+ <style scoped="scoped" lang="less">
 	.bb{
 		color: red;
 		.cc{
@@ -24,7 +27,7 @@ less使用方法
 		}
 	}
 	
-</style> -->
+</style> 
 
 //1.cnpm install  下载相关组件
 
