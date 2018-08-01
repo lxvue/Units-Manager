@@ -6,7 +6,9 @@ axios使用方法
 a.引入 var qs = require('qs');
 
 
-b.   			this.$ajax({
+b.   			
+
+					this.$ajax({
 	
 						      method: 'post',
 							  
@@ -28,12 +30,19 @@ b.   			this.$ajax({
 							
 
 less使用方法
+
  <style scoped="scoped" lang="less">
+ 
 	.bb{
+		
 		color: red;
-		.cc{
-			color: green;
-		}
+		
+			.cc{
+				
+				color: green;
+				
+			}
+		
 	}
 	
 </style> 
