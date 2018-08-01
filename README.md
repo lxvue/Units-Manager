@@ -70,4 +70,6 @@ USE
 	
 	d.School -->学校单位
 	
-	e.Main -->主页面
+	e.Main -->展示主页面
+	
+	f.Home -->后台主页面
