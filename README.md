@@ -47,6 +47,8 @@ less使用方法
 	
 </style> 
 
-//1.cnpm install  下载相关组件
+USE
 
-//2.cnpm run dev  运行项目
+1.cnpm install  下载相关组件
+
+2.cnpm run dev  运行项目
