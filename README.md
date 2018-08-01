@@ -55,3 +55,19 @@ USE
 1.cnpm install  下载相关组件
 
 2.cnpm run dev  运行项目
+
+》》》》》》》》》》》》》》》》》》》》》》》》》
+
+项目结构
+
+1.四大模块
+
+	a.Login -->登录页面
+	
+	b.Person -->个人信息
+	
+	c.Company -->公司单位
+	
+	d.School -->学校单位
+	
+	e.Main -->主页面
