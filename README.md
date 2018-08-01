@@ -7,14 +7,23 @@ a.引入 var qs = require('qs');
 
 
 b.   			this.$ajax({
+	
 						      method: 'post',
+							  
 						      url: _that.URL+'/ddd',
+							  
 						      data:qs.stringify({'page': _that.page ,'rows': _that.rows })
+							  
 						   }).then(function(res){
+							   
 							  console.log(res);
+							  
 							})
+							
 							.catch(function(err){
+								
 							  console.log(err);
+							  
 							})
 							
 
