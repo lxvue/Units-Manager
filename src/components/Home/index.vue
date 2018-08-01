@@ -36,6 +36,7 @@
 	color: #333;
 	text-align: center;
 	line-height:  60px; 
+	font-family:"PingFang SC" !important;
 	//height: 200px !important;
   }
   .el-aside {
