@@ -3,8 +3,9 @@
 //项目有axios组件，less组件，elementui组件，koa组件，mongoose组件
 
 axios使用方法
-a.引入 var qs = require('qs');
+a.
 
+引入 var qs = require('qs');
 
 b.   			
 
