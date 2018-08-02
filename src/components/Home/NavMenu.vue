@@ -36,7 +36,7 @@
 	  <el-submenu index="2">
 	          <template slot="title">
 	            <i class="el-icon-tickets"></i>
-	            <span>数据服务</span>
+	            <span>信息中心</span>
 	          </template>
 	          <el-menu-item-group>
 				  <router-link to="/Home/Company">
@@ -61,6 +61,39 @@
 	  
 	          </el-menu-item-group>
 	        </el-submenu>
+			<el-submenu index="3">
+					<template slot="title">
+					<i class="el-icon-setting"></i>
+					<span>数据服务</span>
+					</template>
+					<el-menu-item-group>
+						<router-link to="/Home/StudyExprience">
+						<el-menu-item index="3-1">
+							<i class="el-icon-star-on"></i>
+							学习经历
+						</el-menu-item>
+						</router-link>
+						<router-link to="/Home/WorkExprience">
+							<el-menu-item index="3-2">
+							<i class="el-icon-view"></i>
+							工作经历
+							</el-menu-item>
+						</router-link>
+					<router-link to="/Home/Hobby">
+						<el-menu-item index="3-3">
+							<i class="el-icon-menu"></i>
+							兴趣爱好
+							</el-menu-item>
+					</router-link>
+					<router-link to="/Home/Relation">
+						<el-menu-item index="3-3">
+							<i class="el-icon-star-off"></i>
+							客户关系
+							</el-menu-item>
+					</router-link>
+			
+					</el-menu-item-group>
+				</el-submenu>
    
     </el-menu>
   </el-col>
