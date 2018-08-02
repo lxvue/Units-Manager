@@ -2,11 +2,11 @@
 	<div class='body'>
 		<div class='search'>
 			<el-input placeholder="请输入内容" v-model="input5" class="input-with-select">
-				<el-select v-model="select" slot="prepend" placeholder="请选择">
+				<!--<el-select v-model="select" slot="prepend" placeholder="请选择">
 					<el-option label="姓名" value="1"></el-option>
 					<el-option label="电话" value="2"></el-option>
 					<el-option label="住址" value="3"></el-option>
-				</el-select>
+				</el-select>-->
 				<el-button slot="append" icon="el-icon-search"></el-button>
 			</el-input>
 		</div>
@@ -26,7 +26,7 @@
 				<template slot-scope="scope">
 					<el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
 					<el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
-					<el-button size="mini" type="success" @click="handleAdd(scope.$index, scope.row)">新增</el-button>
+					<el-button size="mini" type="success" @click="handleCheck(scope.$index, scope.row)">查看</el-button>
 				</template>
 			</el-table-column>
 		
@@ -86,33 +86,46 @@
 					date: '2016-05-07',
 					name: '王小虎',
 					phone: '15801617784',
-					address: '上海市普陀区金沙江路 1518 弄'
-				}],
-				multipleSelection: []
-			}
-		},
-		methods: {
-			handleEdit(index, row) {
-				console.log(index, row);
-			},
-			handleDelete(index, row) {
-				console.log(index, row);
-			},
-			handleAdd(index, row) {
-				console.log(index, row);
-			},
-			 handleSizeChange(val) {
-		        console.log(`每页 ${val} 条`);
-		      },
-		      handleCurrentChange(val) {
-		        console.log(`当前页: ${val}`);
-		      },
-		      handleSelectionChange(val) {
-		        this.multipleSelection = val;
-		      }
-		}
+					address: '上海市普陀区金沙江路 1518 弄'}],
+multipleSelection: []
+}
+},
+methods: {
+	handleEdit(index, row) {
+		console.log(index, row);
+	},
+	handleDelete(index, row) {
+		console.log(index, row);
+		this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+			confirmButtonText: '确定',
+			cancelButtonText: '取消',
+			type: 'warning'
+		}).then(() => {
+			this.$message({
+				type: 'success',
+				message: '删除成功!'
+			});
+		}).catch(() => {
+			this.$message({
+				type: 'info',
+				message: '已取消删除'
+			});
+		});
+	},
+	handleCheck(index, row) {
+		console.log(index, row);
+	},
+	handleSizeChange(val) {
+		console.log(`每页 ${val} 条`);
+	},
+	handleCurrentChange(val) {
+		console.log(`当前页: ${val}`);
+	},
+	handleSelectionChange(val) {
+		this.multipleSelection = val;
 	}
-</script>
+}
+}</script>
 <style scoped="scoped" lang="less">
 	.body {
 		line-height: 20px !important;

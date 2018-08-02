@@ -26,7 +26,7 @@
 				<template slot-scope="scope">
 					<el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
 					<el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
-					<el-button size="mini" type="success" @click="handleAdd(scope.$index, scope.row)">新增</el-button>
+					<el-button size="mini" type="success" @click="handleCheck(scope.$index, scope.row)">新增</el-button>
 				</template>
 			</el-table-column>
 		
@@ -98,7 +98,7 @@
 			handleDelete(index, row) {
 				console.log(index, row);
 			},
-			handleAdd(index, row) {
+			handleCheck(index, row) {
 				console.log(index, row);
 			},
 			 handleSizeChange(val) {
