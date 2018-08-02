@@ -11,14 +11,18 @@
 					<!-- 你好！{{admin_title}}
 					<i class="el-icon-arrow-down"></i> -->
 						<el-dropdown trigger="click">
-							<span class="el-dropdown-link admin_greetings">
-								你好！{{admin_title}}
-								<i class="el-icon-arrow-down"></i>
-							</span>
+							 <el-tooltip class="item" effect="dark" content="点击查看" placement="bottom">
+									<span class="el-dropdown-link admin_greetings">
+										你好！{{admin_title}}
+										<i class="el-icon-arrow-down"></i>
+									</span>
+							</el-tooltip>
 							<el-dropdown-menu slot="dropdown">
 								<el-dropdown-item>查看信息</el-dropdown-item>
-								<el-dropdown-item>安全推出</el-dropdown-item>
 								<el-dropdown-item>更改密码</el-dropdown-item>
+								<el-dropdown-item>
+									<el-button type="text" @click="open7">安全退出</el-button>
+								</el-dropdown-item>
 							</el-dropdown-menu>
 						</el-dropdown>
 					</div>
@@ -64,7 +68,29 @@
       },
 			components:{
 				"NavMenu":NavMenu
-			}
+			},
+			   methods: {
+						open7() {
+							var _that = this;
+							this.$confirm('退出后将进入登陆页面, 是否继续?', '提示', {
+								confirmButtonText: '确认',
+								cancelButtonText: '取消',
+								type: 'warning',
+								center: true
+							}).then(() => {
+								this.$message({
+									type: 'success',
+									message: '退出成功!'
+								});
+								_that.$router.push({ path: '/' });//跳转页面，且可以携带参数
+							}).catch(() => {
+								this.$message({
+									type: 'info',
+									message: '已取消'
+								});
+							});
+						}
+    }
     }
   </script>
   <style scoped="scoped" lang="less">

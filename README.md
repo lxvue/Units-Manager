@@ -50,6 +50,10 @@ less使用方法
 	
 </style> 
 
+js跳转
+
+_that.$router.push({ path: '/' });//跳转页面，且可以携带参数
+
 USE
 
 1.cnpm install  下载相关组件
