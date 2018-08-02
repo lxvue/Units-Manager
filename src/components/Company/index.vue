@@ -121,9 +121,16 @@
 	.tablegrid{
 		margin-top:30px;
 	}
-	.el-table th div, .el-table th>.cell{
-		text-align: center!important;
-	}
+	.el-table th {
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center !important;
+}
+
 	.pagination{
 	   	float:right;
 	   	margin-top:20px;

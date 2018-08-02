@@ -25,4 +25,13 @@ export default {
 .pop_pointer{
 	cursor:pointer
 }
+.el-table th {
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center !important;
+}
 </style>
