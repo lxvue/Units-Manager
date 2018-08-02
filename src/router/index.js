@@ -8,9 +8,14 @@ import Main from '@/components/Main/index'
 //后台主页面
 import Home from '@/components/Home/index'
 
-
-
-
+//单位信息页面
+import Company from '@/components/Company/index'
+//学校信息页面
+import School from '@/components/School/index'
+//个人信息页面
+import Person from '@/components/Person/index'
+//用户信息页面
+import User from '@/components/User/index'
 
 Vue.use(Router)
 
@@ -24,7 +29,13 @@ export default new Router({
     {
       path: '/Home',
       name: 'Home',
-      component: Home
+      component: Home,
+			 children:[
+                    { path: '/home/Company', component: Company},       
+										{ path: '/home/School', component: School},					
+										{ path: '/home/User', component: User},
+                    { path: '/home/Person', component: Person}
+                ]
     },
     {
       path: '/Main',
