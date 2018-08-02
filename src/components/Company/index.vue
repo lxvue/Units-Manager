@@ -59,12 +59,12 @@
 					address: '上海市普陀区金沙江路 1518 弄'
 				}, {
 					date: '2016-05-02',
-					name: '王小虎',
+					name: '张二牛',
 					phone: '15801617784',
 					address: '上海市普陀区金沙江路 1518 弄'
 				}, {
 					date: '2016-05-04',
-					name: '王小虎',
+					name: '赵小六',
 					phone: '15801617784',
 					address: '上海市普陀区金沙江路 1518 弄'
 				}, {
@@ -114,6 +114,9 @@ methods: {
 	},
 	handleCheck(index, row) {
 		console.log(index, row);
+		 this.$alert(row.date+"、"+row.name+"、"+row.phone+"、"+row.address, {
+          dangerouslyUseHTMLString: true
+        });
 	},
 	handleSizeChange(val) {
 		console.log(`每页 ${val} 条`);
