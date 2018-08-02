@@ -8,7 +8,7 @@
 			<el-input v-model="user.password" placeholder="请输入密码" type="password" @keyup.native.enter="handleSubmit"></el-input>
 		</el-form-item>
 		<el-form-item class="delu-box">
-			<el-button type="primary" @click.native.prevent="login" :loading="btnLoading" style="float: left;">登录
+			<el-button type="primary" @click.native.prevent="login" :loading="btnLoading" style="float: left;"><router-link to='./home'>登录</router-link>
 			</el-button>
 			<el-button @click.native.prevent="handleReset" style="float: right;">重置</el-button>
 		</el-form-item>
