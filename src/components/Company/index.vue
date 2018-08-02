@@ -106,6 +106,9 @@
 		      },
 		      handleCurrentChange(val) {
 		        console.log(`当前页: ${val}`);
+		      },
+		      handleSelectionChange(val) {
+		        this.multipleSelection = val;
 		      }
 		}
 	}
