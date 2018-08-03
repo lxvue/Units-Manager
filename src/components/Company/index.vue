@@ -56,41 +56,42 @@
 					date: '2016-05-03',
 					name: '王小虎',
 					phone: '15801617784',
-					address: '上海市普陀区金沙江路 1518 弄'
+					address: '上海市普陀区金沙江路 1516 弄'
 				}, {
 					date: '2016-05-02',
 					name: '张二牛',
 					phone: '15801617784',
-					address: '上海市普陀区金沙江路 1518 弄'
+					address: '上海市普陀区金沙江路 1514 弄'
 				}, {
 					date: '2016-05-04',
 					name: '赵小六',
 					phone: '15801617784',
-					address: '上海市普陀区金沙江路 1518 弄'
+					address: '上海市普陀区金沙江路 1512 弄'
 				}, {
 					date: '2016-05-01',
 					name: '王小虎',
 					phone: '15801617784',
-					address: '上海市普陀区金沙江路 1518 弄'
+					address: '上海市普陀区金沙江路 1519 弄'
 				}, {
 					date: '2016-05-08',
 					name: '王小虎',
 					phone: '15801617784',
-					address: '上海市普陀区金沙江路 1518 弄'
+					address: '上海市普陀区金沙江路 1517 弄'
 				}, {
 					date: '2016-05-06',
 					name: '王小虎',
 					phone: '15801617784',
-					address: '上海市普陀区金沙江路 1518 弄'
+					address: '上海市普陀区金沙江路 1514 弄'
 				}, {
 					date: '2016-05-07',
 					name: '王小虎',
 					phone: '15801617784',
-					address: '上海市普陀区金沙江路 1518 弄'}],
-multipleSelection: []
-}
-},
-methods: {
+					address: '上海市普陀区金沙江路 1513 弄'}
+				],
+                   multipleSelection: []
+               }
+            },
+  methods: {
 	handleEdit(index, row) {
 		console.log(index, row);
 	},
