@@ -10,6 +10,7 @@
 						<div class="admin_name pop_pointer">
 							<!-- 你好！{{admin_title}}
 					<i class="el-icon-arrow-down"></i> -->
+<<<<<<< HEAD
 							<el-dropdown trigger="click">
 								<span class="el-dropdown-link admin_greetings">
 								你好！{{admin_title}}
@@ -28,6 +29,34 @@
 					</el-col>
 				</el-row>
 			</el-header>
+=======
+						<el-dropdown trigger="click">
+							 <el-tooltip class="item" effect="dark" content="点击查看" placement="bottom">
+									<span class="el-dropdown-link admin_greetings">
+										你好！{{admin_title}}
+										<i class="el-icon-arrow-down"></i>
+									</span>
+							</el-tooltip>
+							<el-dropdown-menu slot="dropdown">
+								<el-dropdown-item>查看信息</el-dropdown-item>
+								<el-dropdown-item>更改密码</el-dropdown-item>
+								<el-dropdown-item>
+									<el-button type="text" @click="open7">安全退出</el-button>
+								</el-dropdown-item>
+							</el-dropdown-menu>
+						</el-dropdown>
+					</div>
+					
+				<img class="admin_img " src="../../assets/Administrator.jpg" alt="">
+				
+			</el-col>
+		</el-row>
+		</el-header>
+		<el-container>
+			<el-aside width="200px" >
+				<NavMenu></NavMenu>
+			</el-aside>
+>>>>>>> ddb5d479d432a2e0d2245c18627d2afc3d787c88
 			<el-container>
 				<el-aside width="200px">
 					<NavMenu></NavMenu>
@@ -53,6 +82,7 @@
 	</div>
 </template>
 
+<<<<<<< HEAD
 <script>
 	// <!-- 引入左侧导航菜单 -->
 	import NavMenu from "./NavMenu.vue"
@@ -64,6 +94,47 @@
 		},
 		components: {
 			"NavMenu": NavMenu
+=======
+  <script>
+		// <!-- 引入左侧导航菜单 -->
+		import NavMenu from "./NavMenu.vue"
+    export default {
+      data() {
+        return {
+					admin_title:"管理员"
+        }
+      },
+			components:{
+				"NavMenu":NavMenu
+			},
+			   methods: {
+						open7() {
+							var _that = this;
+							this.$confirm('退出后将进入登陆页面, 是否继续?', '提示', {
+								confirmButtonText: '确认',
+								cancelButtonText: '取消',
+								type: 'warning',
+								center: true
+							}).then(() => {
+								this.$message({
+									type: 'success',
+									message: '退出成功!'
+								});
+								_that.$router.push({ path: '/' });//跳转页面，且可以携带参数
+							}).catch(() => {
+								this.$message({
+									type: 'info',
+									message: '已取消'
+								});
+							});
+						}
+    }
+    }
+  </script>
+  <style scoped="scoped" lang="less">
+		.body{
+			font-size: 12px;
+>>>>>>> ddb5d479d432a2e0d2245c18627d2afc3d787c88
 		}
 	}
 </script>

@@ -5,7 +5,7 @@ const app = new Koa();
 const router = new Router();
 const bodyParser = require('koa-bodyparser');
 var cors = require('koa-cors');//解决跨域请求问题中间件
-var User = require("./schema.js");
+var User = require("./UserSchema.js");
 
 app.use(cors());
 app.use(bodyParser());
@@ -21,7 +21,7 @@ let pages = (parseInt(ctx.body.page) - 1)*rows;
 console.log(pages);
 console.log(typeof(rows));
 let aa;
-await User.find({}).skip(pages).limit(rows).sort({"text":1}).then(function(res,err){
+await User.find({}).skip(pages).limit(rows).sort({"account":1}).then(function(res,err){
 	  if (err) {
             aa= err;
         }
@@ -32,7 +32,7 @@ await User.find({}).skip(pages).limit(rows).sort({"text":1}).then(function(res,e
 });
 let total =await	User.find({}).count();
             
-            aa = {"res":aa,"total":total}
+            aa = {"res":aa,"total":total,"status":true}
 ctx.response.body = aa;
   	//ctx.response.body = await students.find({},{sort:{"text":1}},{limit:rows},{skip:pages});
 });
@@ -41,15 +41,16 @@ router.post('/GetModel', async ( ctx ) => {
 	ctx.response.type = 'text/html';
 	  ctx.body = ctx.request.body;
 //	  查询数据库
-   	  var wherestr = {'_id' : ctx.body.TableId};
+   	  var wherestr = {'_id' : ctx.body.UserID};
     
   await  User.find(wherestr).then(function(res, err){
         if (err) {
-            ctx.response.body = err;
+            ctx.response.body = "error"
+
         }
         else {
             console.log("Res:" + res);
-            ctx.response.body = res;
+            ctx.response.body = {"res":res,"status":true};
         }
     })
    	
@@ -61,16 +62,17 @@ router.post('/Edit', async ( ctx ) => {
 	  console.log(ctx.body)
 //	  查询数据库
 	
-   	    var wherestr = {'_id' : ctx.body.TableId};
-    var updatestr = {"text":ctx.body.Name,"parent":ctx.body.parent};
+   	    var wherestr = {'_id' : ctx.body.UserID};
+    var updatestr = {"account":ctx.body.account,"passward":ctx.body.passward,"name":ctx.body.name,"sex":ctx.body.sex};
     
 await    User.update(wherestr, updatestr).then(function (res, err) {//使用。then可以正常返回
 
         if (err) {
-            ctx.response.body = "Error:" + err
+            ctx.response.body = "error"
+						console.log(err)
         }
         else {
-            ctx.response.body ="success"
+            ctx.response.body =true
         }
 
     })
@@ -93,17 +95,20 @@ router.post('/Add', async ( ctx ) => {
 //  console.log(i)
 // 	}
    	let user = new User({
-        text : ctx.body.Name,                 //用户账号
-        parent : ctx.body.parent,                 //用户账号
+        account : ctx.body.account,                 //用户账号
+        passward : ctx.body.passward,                 //密码    
+				name : ctx.body.name,                 		//姓名    
+				sex : ctx.body.sex,                 //性别
     });
 
 await  user.save({}).then(function (res, err) {//使用。then可以正常返回
 
         if (err) {
-            ctx.response.body = "Error:" + err
+            ctx.response.body = "error"
+
         }
         else {
-            ctx.response.body ="success"
+            ctx.response.body =true
         }
 
     });
@@ -119,15 +124,16 @@ router.post('/Delate', async ( ctx ) => {
 //	  查询数据库
 	  //let GetModel = await students.remove({"_id":ctx.body.TableId});
    	
-   	    var wherestr = {'_id' : ctx.body.TableId};
+   	    var wherestr = {'_id' : ctx.body.UserID};
     
   await  User.remove(wherestr).then(function (res, err) {//使用。then可以正常返回
 
         if (err) {
-            ctx.response.body = "Error:" + err
+            ctx.response.body = "error"
+
         }
         else {
-            ctx.response.body ="success"
+            ctx.response.body =true
         }
 
     })

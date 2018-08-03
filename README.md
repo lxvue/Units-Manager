@@ -31,6 +31,15 @@ b.
 							  
 							})
 							
+c.table事件如何调用
+
+例如：单击事件
+
+在el-table中加入@cell-click="tableClick()"
+
+在methods中tableClick方法中就可直接调用，并输出响应参数
+
+cell-click	当某个单元格被点击时会触发该事件	row, column, cell, event
 
 less使用方法
 
@@ -49,6 +58,10 @@ less使用方法
 	}
 	
 </style> 
+
+js跳转
+
+_that.$router.push({ path: '/' });//跳转页面，且可以携带参数
 
 USE
 

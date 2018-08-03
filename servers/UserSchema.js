@@ -10,7 +10,8 @@ var UserSchema = new Schema({
   account : { type: String },   //账号                 
   passward : { type: String },   //密码
   name : { type: String },        //姓名
-  sex : { type: String },               //性别                      
+  sex : { type: String },   //性别
+  age : { type: String }        //性别                      
 });
 
-module.exports = mongoose.model('User',UserSchema);//此处mondel用什么名字就会生成什么表
+module.exports = mongoose.model('Users',UserSchema);//此处mondel用什么名字就会生成什么表

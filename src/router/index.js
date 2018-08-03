@@ -16,6 +16,16 @@ import School from '@/components/School/index'
 import Person from '@/components/Person/index'
 //用户信息页面
 import User from '@/components/User/index'
+//学习经历页面
+import StudyExprience from '@/components/StudyExprience/index'
+//工作经历页面
+import WorkExprience from '@/components/WorkExprience/index'
+//兴趣爱好页面
+import Hobby from '@/components/Hobby/index'
+//客户关系页面
+import Relation from '@/components/Relation/index'
+
+
 
 Vue.use(Router)
 
@@ -34,7 +44,11 @@ export default new Router({
                     { path: '/home/Company', component: Company},       
 										{ path: '/home/School', component: School},					
 										{ path: '/home/User', component: User},
-                    { path: '/home/Person', component: Person}
+                    { path: '/home/Person', component: Person},     
+										{ path: '/home/StudyExprience', component: StudyExprience},        
+										{ path: '/home/WorkExprience', component: WorkExprience},           
+										{ path: '/home/Hobby', component: Hobby},			
+										{ path: '/home/Relation', component: Relation}
                 ]
     },
     {
