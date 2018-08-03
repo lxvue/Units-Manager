@@ -114,7 +114,7 @@
 				_id:''
 				},
 				formLabelWidth:"80px",//表单输入框宽度
-			URL:"http://localhost:3000"	,//提交地址
+			URL:"http://localhost:3000/User"	,//提交地址
 			rows:20, //单页总数
 			page:1,  //页码
 			//currentRow: null
