@@ -139,7 +139,38 @@ router.post(postUrl+'/Delate', async ( ctx ) => {
    	
    	
    	
+});
+
+//用户登录验证
+router.post(postUrl+'/Login', async ( ctx ) => {
+	ctx.response.type = 'text/html';
+	  ctx.body = ctx.request.body;
+//	  查询数据库
+   	  var wherestr = {'account' : ctx.body.account};
+    
+  await  User.find(wherestr).then(function(res, err){
+        if (err) {
+            ctx.response.body = "error"
+
+        }
+        else {
+            console.log("Res:" + res);
+			if(res==""){
+				ctx.response.body = {"res":"账号不存在","status":false};
+			}else{
+				console.log(res[0].passward)
+				if(res[0].passward == ctx.body.passward ){
+					ctx.response.body = {"res":"登陆成功","status":true};
+				}else{
+					ctx.response.body = {"res":"密码错误","status":false};
+				}
+			}
+            
+        }
+    })
+   	
 })
+
 
 module.exports = router;
 
