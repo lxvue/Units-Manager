@@ -14,10 +14,11 @@
 			<el-col :span="8" :offset="8">
 					<el-row class="button_group">
 					  <el-button size="mini" type="" plain icon="el-icon-refresh">刷新</el-button>	
-					  <el-button size="mini" type=""  @click="Add()" plain icon="el-icon-plus">
+					  <!-- <el-button size="mini" type=""  @click="Add()" plain icon="el-icon-plus">	 -->
+											<el-button size="mini" type=""  @click="$store.state.show = true" plain icon="el-icon-plus">
 						  新增
 					  </el-button>
-					  <el-button size="mini" type="" plain icon="el-icon-edit" @click="Edit()">编辑</el-button>
+					  <el-button size="mini" type="" plain icon="el-icon-edit" @click="$store.state.editShow = true">编辑</el-button>
 					  <el-button size="mini" type="" plain icon="el-icon-delete" @click="Delate()">删除</el-button>
 					</el-row>
 			</el-col>
@@ -57,9 +58,11 @@
 			label="性别">
 			</el-table-column>
 		  </el-table>
-		  
+		  <t-dialog></t-dialog>
+			<e-dialog :imputVal="UserID"></e-dialog>
+
 		  <!-- 新增 -->
-		<el-dialog :title="dialogTitle" :visible.sync="dialogFormVisible">
+<!-- 		<el-dialog :title="dialogTitle" :visible.sync="dialogFormVisible">
 			<el-form :model="form">
 				
 			<el-form-item label="账号" :label-width="formLabelWidth" >
@@ -83,7 +86,7 @@
 				<el-button type="primary" v-show="AddShow" @click="AddImport()">确 定</el-button>		
 				<el-button type="primary" v-show="EditShow" @click="EditImport()">确 定</el-button>
 			</div>
-		</el-dialog>
+		</el-dialog> -->
 		
 		<!-- 编辑 -->
     </div>
@@ -94,6 +97,11 @@
 <script>
 	//引用axios
 	var qs = require('qs');//引用qs，下方axios方法里，才能在使用qs.stringify（）；
+	//引入子组件 add新增
+	import Addcomponents from './Add.vue'
+	import Editcomponents from './Edit.vue'
+
+	
 	
   export default {
     data() {
@@ -121,7 +129,9 @@
       }
     },
 	components:{
-		
+		"t-dialog":Addcomponents,
+		"e-dialog":Editcomponents,
+
 	}, 
 	methods:{
 		  AddImport(){//表单提交
