@@ -71,7 +71,6 @@
 											//_that.setCurrent();
 											_that.Show();//刷新列表
 											_that.$store.state.editShow = false;
-
 										}else{
 											
 											_that.$message.error('提交失败');
